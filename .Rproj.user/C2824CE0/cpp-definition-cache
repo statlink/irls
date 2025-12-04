@@ -1,0 +1,71 @@
+[
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/gamma.cpp",
+        "file_last_write": 1764769731.0,
+        "definitions": [
+            {
+                "usr": "c:@F@gamma_cpp#&1I#S0_#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gamma_cpp(const Eigen::MatrixXd &, const Eigen::VectorXd &, double, int)",
+                "file": "C:/Users/mtsag/Desktop/irls/src/gamma.cpp",
+                "line": 6,
+                "column": 12,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/gammas.cpp",
+        "file_last_write": 1764769735.0,
+        "definitions": [],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/logis.cpp",
+        "file_last_write": 1764769741.0,
+        "definitions": [],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/logistic.cpp",
+        "file_last_write": 1764769744.0,
+        "definitions": [
+            {
+                "usr": "c:@F@logistic_cpp#&1I#S0_#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "logistic_cpp(const Eigen::MatrixXd &, const Eigen::VectorXd &, double, int)",
+                "file": "C:/Users/mtsag/Desktop/irls/src/logistic.cpp",
+                "line": 6,
+                "column": 12,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/poiss.cpp",
+        "file_last_write": 1764769748.0,
+        "definitions": [],
+        "hidden": false
+    },
+    {
+        "file": "C:/Users/mtsag/Desktop/irls/src/poisson.cpp",
+        "file_last_write": 1764769756.0,
+        "definitions": [
+            {
+                "usr": "c:@F@poisson_cpp#&1I#S0_#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "poisson_cpp(const Eigen::MatrixXd &, const Eigen::VectorXd &, double, int)",
+                "file": "C:/Users/mtsag/Desktop/irls/src/poisson.cpp",
+                "line": 6,
+                "column": 12,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    }
+]

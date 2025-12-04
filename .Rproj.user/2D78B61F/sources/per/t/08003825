@@ -1,0 +1,26 @@
+{
+    "id": "08003825",
+    "path": "~/packages/irls/src/gamma.cpp",
+    "project_path": "src/gamma.cpp",
+    "type": "cpp",
+    "hash": "1841198945",
+    "contents": "",
+    "dirty": false,
+    "created": 1764763028594.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "1,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1764769731,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1764769731511,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,26 @@
+{
+    "id": "C6D19894",
+    "path": "~/packages/irls/R/col.irls.R",
+    "project_path": "R/col.irls.R",
+    "type": "r_source",
+    "hash": "676138368",
+    "contents": "",
+    "dirty": false,
+    "created": 1764762856454.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "8,21",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1764766783,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1764766783037,
+    "read_only": false,
+    "read_only_alternatives": []
+}

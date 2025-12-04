@@ -1,0 +1,26 @@
+{
+    "id": "A252BBA4",
+    "path": "~/packages/irls/src/Makevars",
+    "project_path": "src/Makevars",
+    "type": "makefile",
+    "hash": "2745268541",
+    "contents": "",
+    "dirty": false,
+    "created": 1764762611248.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "9,39",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1764771735,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1764771735957,
+    "read_only": false,
+    "read_only_alternatives": []
+}

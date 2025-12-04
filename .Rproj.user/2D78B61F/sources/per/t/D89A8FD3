@@ -1,0 +1,26 @@
+{
+    "id": "D89A8FD3",
+    "path": "~/packages/irls/man/col.irls.Rd",
+    "project_path": "man/col.irls.Rd",
+    "type": "r_doc",
+    "hash": "3477009282",
+    "contents": "",
+    "dirty": false,
+    "created": 1764762454661.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "3,12",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1764772484,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1764772484839,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,98 @@
+#include <RcppEigen.h>
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
+
+// [[Rcpp::export]]
+Rcpp::List logistic_cpp(const Eigen::MatrixXd &X, const Eigen::VectorXd &y,
+                               double tol = 1e-6, int maxiter = 100) {
+  const int n = X.rows();
+  const int p = X.cols() + 1;
+
+  MatrixXd X_des(n, p);
+  X_des.col(0).setOnes();
+  X_des.rightCols(p - 1) = X;
+
+  VectorXd beta = VectorXd::Zero(p);
+  VectorXd eta(n), mu(n), w(n), z(n);
+  VectorXd Xtz(p), se(p);
+  MatrixXd XtWX(p, p);
+
+  eta.setZero();
+  mu.setConstant(0.5);
+
+  XtWX.noalias() = 0.25 * (X_des.transpose() * X_des);
+  z = 2.0 * (y.array() - 0.5); // Working response
+  Xtz.noalias() = X_des.transpose() * z;
+
+  beta = XtWX.ldlt().solve(Xtz);
+  eta.noalias() = X_des * beta;
+
+  for (int i = 0; i < n; ++i) {
+    mu(i) = 1.0 / (1.0 + std::exp(-eta(i)));
+  }
+
+  double dev1 = 0.0;
+  for (int i = 0; i < n; ++i) {
+    if (y(i) > 0.5) { // y = 1
+      dev1 -= std::log(mu(i) + 1e-16);
+    } else {
+      dev1 -= std::log(1.0 - mu(i) + 1e-16);
+    }
+  }
+  int iter = 1;
+  Eigen::LDLT<MatrixXd> ldlt;
+
+  while (iter < maxiter) {
+    iter++;
+    for (int i = 0; i < n; ++i) {
+      double mu_i = mu(i);
+      w(i) = std::max(mu_i * (1.0 - mu_i), 1e-8);
+      z(i) = eta(i) + (y(i) - mu_i) / w(i);
+    }
+
+    XtWX.noalias() = X_des.transpose() * w.asDiagonal() * X_des;
+    Xtz.noalias() = X_des.transpose() * (w.array() * z.array()).matrix();
+
+    ldlt.compute(XtWX);
+    beta = ldlt.solve(Xtz);
+
+    eta.noalias() = X_des * beta;
+
+    for (int i = 0; i < n; ++i) {
+      mu(i) = 1.0 / (1.0 + std::exp(-eta(i)));
+    }
+
+    double dev2 = 0.0;
+    for (int i = 0; i < n; ++i) {
+      if (y(i) > 0.5) { // y = 1
+        dev2 -= std::log(mu(i) + 1e-16);
+      } else { // y = 0
+        dev2 -= std::log(1.0 - mu(i) + 1e-16);
+      }
+    }
+
+    double rel_change = std::abs(dev2 - dev1) / (std::abs(dev1) + 0.1);
+    if (rel_change < tol) {
+      break;
+    }
+
+    dev1 = dev2;
+  }
+
+  MatrixXd vcov = ldlt.solve(MatrixXd::Identity(p, p));
+  se = vcov.diagonal().array().sqrt();
+
+  double dev = 0.0;
+  for (int i = 0; i < n; ++i) {
+    if (y(i) > 0.5) { // y = 1
+      dev -= 2.0 * std::log(mu(i) + 1e-16);
+    } else { // y = 0
+      dev -= 2.0 * std::log(1.0 - mu(i) + 1e-16);
+    }
+  }
+
+  return Rcpp::List::create(Rcpp::Named("coefficients") = beta,
+                            Rcpp::Named("vcov") = vcov, Rcpp::Named("se") = se,
+                            Rcpp::Named("dev") = dev,
+                            Rcpp::Named("iters") = iter);
+}

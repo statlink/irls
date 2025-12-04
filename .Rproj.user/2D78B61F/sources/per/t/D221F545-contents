@@ -1,0 +1,5 @@
+useDynLib(irls)
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "model.matrix")
+export("col.irls")
+export("irls")

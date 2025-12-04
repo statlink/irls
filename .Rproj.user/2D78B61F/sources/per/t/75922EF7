@@ -1,0 +1,26 @@
+{
+    "id": "75922EF7",
+    "path": "~/packages/irls/src/poisson.cpp",
+    "project_path": "src/poisson.cpp",
+    "type": "cpp",
+    "hash": "875365227",
+    "contents": "",
+    "dirty": false,
+    "created": 1764763575959.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "10,29",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1764769756,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1764769756887,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,15 @@
+Rcpp::sourceCpp("~/Desktop/irls/logis/logis.cpp")
+source("~/Desktop/irls/irls_1.R")
+
+x<-Rfast::matrnorm(10000,6)
+y<-rbinom(10000,1,0.5)
+
+res1 <- logis_new(x,y)
+res2<-logis(x,y)
+res3 <- logis_new(x,y, parallel =TRUE)
+
+round(res1,6) == round(res2,6)
+round(res3,4) == round(res2,4) # To parallel χάνει 5ο και 6ο δεκαδικό
+
+microbenchmark::microbenchmark(logis(x,y), logis_new(x,y), logis_new(x,y, parallel = TRUE), times = 100)
+#Parallel για πάνω απο 5 X
